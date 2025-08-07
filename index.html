@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Schedule Manager</h1>
+            <p>Manage your classes and work schedule</p>
+        </header>
+
+		<!-- Add this section to your HTML -->
+		<div class="file-operations-section">
+			<div class="file-operations-buttons">
+				<button class="btn btn-primary" onclick="downloadScheduleCSV()">
+					Download CSV
+				</button>
+				<button class="btn btn-secondary" onclick="uploadScheduleCSV()">
+					Upload CSV
+				</button>
+				<button class="btn btn-danger" onclick="clearAllSchedule()">
+					Clear All
+				</button>
+			</div>
+		</div>
+
+		<!-- Summary Section -->
+		<div class="summary-section">
+			<div class="summary-card">
+				<div class="summary-number" id="totalClasses">0</div>
+				<div class="summary-label">Total Classes</div>
+			</div>
+			<div class="summary-card">
+				<div class="summary-number" id="totalWork">0</div>
+				<div class="summary-label">Work Sessions</div>
+			</div>
+			<div class="summary-card">
+				<div class="summary-number" id="totalHours">0</div>
+				<div class="summary-label">Total Work Hours</div>
+			</div>
+		</div>
+
+
+        <div class="main-content">
+            <!-- Left Panel -->
+            <div class="left-panel">
+                <!-- Class Input Section -->
+                <div class="input-section">
+                    <h2>Add Class</h2>
+                    <div class="input-group">
+                        <label for="className">Class Name</label>
+                        <input type="text" id="className" placeholder="e.g., Computer Science 101">
+                    </div>
+                    <div class="input-group">
+                        <label for="classInstructor">Instructor</label>
+                        <input type="text" id="classInstructor" placeholder="e.g., Dr. Smith">
+                    </div>
+                    <div class="input-group">
+                        <label for="classDays">Days</label>
+                        <input type="text" id="classDays" placeholder="e.g., Mon,Wed,Fri or MWF">
+                    </div>
+                    <div class="input-group">
+                        <label for="classTime">Time Range</label>
+                        <input type="text" id="classTime" placeholder="e.g., 9:00-10:30">
+                    </div>
+                    <button onclick="addClass()" class="btn btn-primary">Add Class</button>
+                </div>
+
+                <!-- Work Input Section -->
+                <div class="input-section">
+                    <h2>Add Work Schedule</h2>
+                    <div class="input-group">
+                        <label for="workDay">Day</label>
+                        <select id="workDay">
+                            <option value="">Select Day</option>
+                            <option value="monday">Monday</option>
+                            <option value="tuesday">Tuesday</option>
+                            <option value="wednesday">Wednesday</option>
+                            <option value="thursday">Thursday</option>
+                            <option value="friday">Friday</option>
+                            <option value="saturday">Saturday</option>
+                            <option value="sunday">Sunday</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="workTime">Time Range</label>
+                        <input type="text" id="workTime" placeholder="e.g., 9:00-17:00">
+                    </div>
+                    <div class="input-group">
+                        <label for="workLocation">Job Location</label>
+                        <input type="text" id="workLocation" placeholder="e.g., Office, Remote">
+                    </div>
+                    <button onclick="addWork()" class="btn btn-primary">Add Work</button>
+                </div>
+
+                <!-- Paste Data Section -->
+                <div class="input-section">
+                    <h2>Paste Excel Data</h2>
+                    <div class="input-group">
+                        <label for="pasteData">Paste tabular data from Excel</label>
+                        <textarea id="pasteData" placeholder="Paste your Excel data here (tab-separated)&#10;Format: Name | Instructor | Days | Time"></textarea>
+                    </div>
+                    <button onclick="parseExcelData()" class="btn btn-secondary">Parse Data</button>
+                </div>
+            </div>
+
+            <!-- Right Panel - Schedule -->
+            <div class="right-panel">
+                <div class="schedule-section">
+                    <h2>Weekly Schedule</h2>
+                    <div class="schedule-container">
+                        <table id="scheduleTable" class="schedule-table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Monday</th>
+                                    <th>Tuesday</th>
+                                    <th>Wednesday</th>
+                                    <th>Thursday</th>
+                                    <th>Friday</th>
+                                    <th>Saturday</th>
+                                    <th>Sunday</th>
+                                </tr>
+                            </thead>
+                            <tbody id="scheduleBody">
+                                <!-- Time slots will be generated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Items List -->
+        <div class="items-section">
+            <div class="items-container">
+                <div class="items-column">
+                    <h3>Classes</h3>
+                    <div id="classesList" class="items-list">
+                        <p class="empty-message">No classes added yet</p>
+                    </div>
+                </div>
+                <div class="items-column">
+                    <h3>Work Sessions</h3>
+                    <div id="workList" class="items-list">
+                        <p class="empty-message">No work sessions added yet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
