@@ -1,0 +1,12 @@
+Type,Title,Description,Days,Time,Color
+class,"MATH 2013","Dr. Foster","Monday, Wednesday, Friday","9:00-9:50",blue
+class,"BISS 1234","Dr. Dunk","Tuesday, Thursday","9:30-10:45",blue
+class,"MGMT 3213","Dr. Dunk","Tuesday, Thursday","11:00-12:15",blue
+class,"ECON 2013","Dr. Walker","Tuesday, Thursday","8:00-9:15",blue
+work,WORK,"Tinker AFB","Tuesday","13:00-17:30",green
+work,WORK,"Tinker AFB","Thursday","13:00-17:30",green
+work,WORK,"SSC","Monday","18:00-19:00",green
+work,WORK,"SSC","Sunday","16:00-19:00",green
+work,WORK,"Tinker AFB","Monday","10:30-17:30",green
+work,WORK,"Tinker AFB","Friday","10:30-17:30",green
+work,WORK,"Tinker AFB","Wednesday","11:30-17:30",green
