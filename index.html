@@ -50,6 +50,21 @@
             <div class="left-panel">
                 <!-- Class Input Section -->
                 <div class="input-section">
+					<div class="class-database-section">
+						<h3>Class Database</h3>
+						<div class="database-controls">
+							<select id="classDatabaseSelect">
+								<option value="">Select a class from database...</option>
+							</select>
+							<button onclick="addClassFromDatabase()" class="btn btn-primary">Add Selected Class</button>
+						</div>
+						<div class="database-buttons">
+							<button onclick="addToClassDatabase()" class="btn btn-secondary">Save Current Class to Database</button>
+							<button onclick="uploadClassDatabase()" class="btn btn-secondary">Upload Database CSV</button>
+							<button onclick="downloadClassDatabase()" class="btn btn-secondary">Download Database CSV</button>
+							<button onclick="clearClassDatabase()" class="btn btn-danger">Clear Database</button>
+						</div>
+					</div>
                     <h2>Add Class</h2>
                     <div class="input-group">
                         <label for="className">Class Name</label>
