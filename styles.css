@@ -341,8 +341,48 @@ header p {
     transition: opacity 0.2s ease;
 }
 
+.bubble-edit {
+    position: absolute;
+    top: 2px;
+    right: 20px;
+    background: rgba(59, 130, 246, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
 .schedule-bubble:hover .bubble-delete {
     opacity: 1;
+}
+
+.schedule-bubble:hover .bubble-edit {
+    opacity: 1;
+}
+
+/* Ensure buttons are always visible on long bubbles */
+.schedule-bubble.multi-hour .bubble-delete {
+    top: 4px;
+    right: 4px;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+}
+
+.schedule-bubble.multi-hour .bubble-edit {
+    top: 4px;
+    right: 24px;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
 }
 
 /* Multi-hour bubble styling */
@@ -360,15 +400,6 @@ header p {
 .schedule-bubble.multi-hour .bubble-details {
     font-size: 11px;
     margin-bottom: 2px;
-}
-
-/* Ensure delete button is always visible on long bubbles */
-.schedule-bubble.multi-hour .bubble-delete {
-    top: 4px;
-    right: 4px;
-    width: 18px;
-    height: 18px;
-    font-size: 12px;
 }
 
 /* Items Section */
@@ -667,4 +698,110 @@ header p {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+/* Class Database Select Dropdown */
+#classDatabaseSelect {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+#classDatabaseSelect:hover {
+    border-color: var(--accent-primary);
+    background-color: var(--bg-secondary);
+}
+
+#classDatabaseSelect:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    background-color: var(--bg-secondary);
+}
+
+#classDatabaseSelect option {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    padding: 10px;
+    font-size: 14px;
+}
+
+#classDatabaseSelect option:hover {
+    background: var(--accent-primary);
+    color: white;
+}
+
+#classDatabaseSelect option:checked {
+    background: var(--accent-primary);
+    color: white;
+}
+
+/* Dark mode dropdown arrow */
+@media (prefers-color-scheme: dark) {
+    #classDatabaseSelect {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23b0b0b0' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    }
+}
+
+/* Alternative version if you want to match the existing select styling exactly */
+.class-database-select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.class-database-select-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--text-secondary);
+    pointer-events: none;
+    transition: border-top-color 0.2s ease;
+}
+
+.class-database-select-wrapper:hover::after {
+    border-top-color: var(--accent-primary);
+}
+
+/* If using the wrapper approach, update the select styling */
+.class-database-select-wrapper #classDatabaseSelect {
+    appearance: none;
+    background-image: none;
+    padding-right: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #classDatabaseSelect {
+        padding: 10px 14px;
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding-right: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    #classDatabaseSelect {
+        padding: 8px 12px;
+        padding-right: 32px;
+        background-size: 14px;
+        background-position: right 10px center;
+    }
 }
