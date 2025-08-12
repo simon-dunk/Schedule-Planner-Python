@@ -1,0 +1,15 @@
+Type,Title,Description,Days,Time,Color
+class,"CIS 2123 - Network","Dr. Carlson","Thursday","18:00-21:00",blue
+class,"MGMT 3203 - Intro","Dr. Rudebock","Monday, Wednesday, Friday","9:00-9:50",blue
+class,"MATH 1173 - Trig","Dr. Hands","Monday, Wednesday, Friday","12:00-12:50",blue
+class,"Chapel","OBU","Wednesday","10:00-10:50",blue
+class,"BISS 4703 - Ethics","Dr. Dunk","Monday, Wednesday, Friday","14:00-14:50",blue
+work,WORK,"Tinker AFB","Tuesday","7:30-17:30",green
+work,WORK,"Tinker AFB","Thursday","7:30-17:30",green
+work,WORK,"Tinker AFB","Monday","16:00-17:30",green
+work,WORK,"Tinker AFB","Wednesday","16:00-17:30",green
+work,WORK,"Tinker AFB","Friday","16:00-17:30",green
+work,WORK,"SSC","Monday","18:00-19:00",green
+work,WORK,"SSC","Tuesday","18:00-19:00",green
+work,WORK,"SSC","Wednesday","18:00-19:00",green
+work,WORK,"SSC","Sunday","18:00-19:00",green
